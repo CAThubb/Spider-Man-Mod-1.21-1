@@ -1,5 +1,7 @@
 package com.dimoch1c.spidermanmod;
 
+import com.dimoch1c.spidermanmod.block.ModBlocks;
+import com.dimoch1c.spidermanmod.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -20,5 +22,8 @@ public class Spidermanmod implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello Fabric world!");
+
+        ModItems.registerModItems();
+        ModBlocks.registerModBlocks();
 	}
 }

@@ -1,5 +1,7 @@
 package com.dimoch1c.spidermanmod.datagen;
 
+import com.dimoch1c.spidermanmod.block.ModBlocks;
+import com.dimoch1c.spidermanmod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.registry.RegistryWrapper;
@@ -13,6 +15,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-
+        addDrop(ModBlocks.SILICON_ORE, oreDrops(ModBlocks.SILICON_ORE, ModItems.RAW_SILICON_ORE));
     }
 }

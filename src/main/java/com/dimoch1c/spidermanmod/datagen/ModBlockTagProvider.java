@@ -1,8 +1,10 @@
 package com.dimoch1c.spidermanmod.datagen;
 
+import com.dimoch1c.spidermanmod.block.ModBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.BlockTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -13,6 +15,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider{
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup lookup) {
+        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+                .add(ModBlocks.SILICON_ORE);
 
+        getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
+                .add(ModBlocks.SILICON_ORE);
     }
 }
