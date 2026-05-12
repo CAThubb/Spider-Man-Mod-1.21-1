@@ -2,6 +2,7 @@ package com.dimoch1c.spidermanmod;
 
 import com.dimoch1c.spidermanmod.block.ModBlocks;
 import com.dimoch1c.spidermanmod.item.ModItems;
+import com.dimoch1c.spidermanmod.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -25,5 +26,8 @@ public class Spidermanmod implements ModInitializer {
 
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
+
+        // Initialize world gen
+        ModWorldGeneration.generateModWorldGen();
 	}
 }
