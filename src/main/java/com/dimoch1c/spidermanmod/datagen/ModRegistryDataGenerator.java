@@ -23,6 +23,6 @@ public class ModRegistryDataGenerator extends FabricDynamicRegistryProvider {
 
     @Override
     public String getName() {
-        return "";
+        return "Worldgen";
     }
 }

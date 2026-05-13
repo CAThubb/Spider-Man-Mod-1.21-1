@@ -25,6 +25,15 @@ public class ModBlocks {
             )
     );
 
+    public static final Block DEEPSLATE_SILICON_ORE = registerBlock("deepslate_silicon_ore",
+            new Block(
+                    AbstractBlock.Settings.create()
+                            .strength(4.5f, 3.0f)
+                            .requiresTool()
+                            .sounds(BlockSoundGroup.DEEPSLATE)
+            )
+    );
+
     // Main method to register blocks
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
@@ -44,6 +53,7 @@ public class ModBlocks {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
             entries.add(ModBlocks.SILICON_ORE);
+            entries.add(ModBlocks.DEEPSLATE_SILICON_ORE);
         });
     }
 }
