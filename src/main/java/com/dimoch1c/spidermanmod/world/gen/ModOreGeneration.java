@@ -9,7 +9,13 @@ public class ModOreGeneration {
 
     public static void generateOres() {
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
-                ModPlacedFeatures.SILICON_ORE_PLACED_KEY);
+                ModPlacedFeatures.SILICON_ORE_SMALL_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
+                ModPlacedFeatures.SILICON_ORE_MIDDLE_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
+                ModPlacedFeatures.SILICON_ORE_UPPER_KEY);
 
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
                 ModPlacedFeatures.DEEPSLATE_SILICON_ORE_PLACED_KEY);

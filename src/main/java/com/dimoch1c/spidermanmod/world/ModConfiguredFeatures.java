@@ -30,6 +30,8 @@ public class ModConfiguredFeatures {
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> SILICON_ORE_KEY = registryKey("silicon_ore");
 
+    public static final RegistryKey<ConfiguredFeature<?, ?>> SILICON_ORE_SMALL_KEY = registryKey("silicon_ore_small");
+
     public static final RegistryKey<ConfiguredFeature<?, ?>> DEEPSLATE_SILICON_ORE_KEY = registryKey("deepslate_silicon_ore");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
@@ -43,6 +45,10 @@ public class ModConfiguredFeatures {
 
         register(context, SILICON_ORE_KEY, Feature.ORE,
                 new OreFeatureConfig(overworldSiliconOres, 9));
+
+        register(context, SILICON_ORE_SMALL_KEY, Feature.ORE,
+                new OreFeatureConfig(overworldSiliconOres, 4));
+
         register(context, DEEPSLATE_SILICON_ORE_KEY, Feature.ORE,
                 new OreFeatureConfig(overworldSiliconOres, 9));
     }

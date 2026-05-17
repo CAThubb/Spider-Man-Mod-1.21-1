@@ -18,16 +18,28 @@ import java.util.List;
 
 public class ModPlacedFeatures {
 
-    public static final RegistryKey<PlacedFeature> SILICON_ORE_PLACED_KEY = registryKey("silicon_ore_placed");
+    public static final RegistryKey<PlacedFeature> SILICON_ORE_SMALL_KEY = registryKey("silicon_ore_small");
+
+    public static final RegistryKey<PlacedFeature> SILICON_ORE_MIDDLE_KEY = registryKey("silicon_ore_middle");
+
+    public static final RegistryKey<PlacedFeature> SILICON_ORE_UPPER_KEY = registryKey("silicon_ore_upper");
 
     public static final RegistryKey<PlacedFeature> DEEPSLATE_SILICON_ORE_PLACED_KEY = registryKey("deepslate_silicon_ore_placed");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatures = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
-        register(context, SILICON_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SILICON_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(4,
-                        HeightRangePlacementModifier.uniform(YOffset.fixed(-64), YOffset.fixed(72))));
+        register(context, SILICON_ORE_SMALL_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SILICON_ORE_SMALL_KEY),
+                ModOrePlacement.modifiersWithCount(10,
+                        HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(74))));
+
+        register(context, SILICON_ORE_MIDDLE_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SILICON_ORE_KEY),
+                ModOrePlacement.modifiersWithCount(10,
+                        HeightRangePlacementModifier.trapezoid(YOffset.fixed(-24), YOffset.fixed(56))));
+
+        register(context, SILICON_ORE_UPPER_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SILICON_ORE_KEY),
+                ModOrePlacement.modifiersWithCount(10,
+                        HeightRangePlacementModifier.uniform(YOffset.fixed(80), YOffset.fixed(384))));
 
         register(context, DEEPSLATE_SILICON_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DEEPSLATE_SILICON_ORE_KEY),
                 ModOrePlacement.modifiersWithCount(4,
