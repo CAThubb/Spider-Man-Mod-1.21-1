@@ -19,6 +19,14 @@ public class ModItems {
             new Item(new Item.Settings().rarity(Rarity.COMMON))
     );
 
+    public static Item RAW_ALUMINIUM_ORE = registerItem("raw_aluminium_ore",
+            new Item(new Item.Settings().rarity(Rarity.COMMON))
+    );
+
+    public static Item ALUMINIUM_INGOT = registerItem("aluminium_ingot",
+            new Item(new Item.Settings().rarity(Rarity.COMMON))
+    );
+
     // Method to register an Item
     private static Item registerItem(String name, Item item) {
         Identifier itemId = Identifier.of(Spidermanmod.MOD_ID, name);
@@ -28,9 +36,11 @@ public class ModItems {
     public static void registerModItems() {
         Spidermanmod.LOGGER.info(Spidermanmod.MOD_ID + ": registered Mod Item");
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entires -> {
-            entires.add(ModItems.RAW_SILICON_ORE);
-            entires.add(ModItems.SILICON_INGOT);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
+            entries.add(ModItems.RAW_SILICON_ORE);
+            entries.add(ModItems.SILICON_INGOT);
+            entries.add(ModItems.RAW_ALUMINIUM_ORE);
+            entries.add(ModItems.ALUMINIUM_INGOT);
         });
     }
 }

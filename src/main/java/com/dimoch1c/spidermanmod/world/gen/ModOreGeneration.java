@@ -18,6 +18,9 @@ public class ModOreGeneration {
                 ModPlacedFeatures.SILICON_ORE_UPPER_KEY);
 
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
-                ModPlacedFeatures.DEEPSLATE_SILICON_ORE_PLACED_KEY);
+                ModPlacedFeatures.ALUMINIUM_ORE_SMALL_KEY);
+
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
+                ModPlacedFeatures.ALUMINIUM_ORE_LARGE_KEY);
     }
 }

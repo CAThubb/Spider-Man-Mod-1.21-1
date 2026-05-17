@@ -23,6 +23,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 ModItems.RAW_SILICON_ORE
         );
 
+        List<ItemConvertible> ALUMINIUM_SMELLABLE = List.of(
+                ModItems.RAW_ALUMINIUM_ORE
+        );
+
+        // Silicon
         offerSmelting(
                 exporter,
                 SILICON_SMELLABLE,
@@ -38,6 +43,24 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 ModItems.SILICON_INGOT,
                 0.25f, 100,
                 "silicon"
+        );
+
+        // Aluminium
+        offerSmelting(
+                exporter,
+                ALUMINIUM_SMELLABLE,
+                RecipeCategory.MISC,
+                ModItems.ALUMINIUM_INGOT,
+                0.25f, 200,
+                "aluminium"
+        );
+        offerBlasting(
+                exporter,
+                ALUMINIUM_SMELLABLE,
+                RecipeCategory.MISC,
+                ModItems.ALUMINIUM_INGOT,
+                0.25f, 100,
+                "aluminium"
         );
     }
 }

@@ -32,7 +32,9 @@ public class ModConfiguredFeatures {
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> SILICON_ORE_SMALL_KEY = registryKey("silicon_ore_small");
 
-    public static final RegistryKey<ConfiguredFeature<?, ?>> DEEPSLATE_SILICON_ORE_KEY = registryKey("deepslate_silicon_ore");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ALUMINIUM_ORE_SMALL_KEY = registryKey("aluminium_ore_small");
+
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ALUMINIUM_ORE_LARGE_KEY = registryKey("aluminium_ore_large");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceables = new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -43,14 +45,22 @@ public class ModConfiguredFeatures {
                 OreFeatureConfig.createTarget(deepslateReplaceables, ModBlocks.DEEPSLATE_SILICON_ORE.getDefaultState())
         );
 
+        List<OreFeatureConfig.Target> overworldAluminiumOres = List.of(
+                OreFeatureConfig.createTarget(stoneReplaceables, ModBlocks.ALUMINIUM_ORE.getDefaultState()),
+                OreFeatureConfig.createTarget(deepslateReplaceables, ModBlocks.DEEPSLATE_ALUMINIUM_ORE.getDefaultState())
+        );
+
         register(context, SILICON_ORE_KEY, Feature.ORE,
                 new OreFeatureConfig(overworldSiliconOres, 9));
 
         register(context, SILICON_ORE_SMALL_KEY, Feature.ORE,
                 new OreFeatureConfig(overworldSiliconOres, 4));
 
-        register(context, DEEPSLATE_SILICON_ORE_KEY, Feature.ORE,
-                new OreFeatureConfig(overworldSiliconOres, 9));
+        register(context, ALUMINIUM_ORE_SMALL_KEY, Feature.ORE,
+                new OreFeatureConfig(overworldAluminiumOres, 10));
+
+        register(context, ALUMINIUM_ORE_LARGE_KEY, Feature.ORE,
+                new OreFeatureConfig(overworldAluminiumOres, 20));
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registryKey(String name) {

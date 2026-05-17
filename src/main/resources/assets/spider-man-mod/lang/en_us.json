@@ -1,6 +1,12 @@
 {
   "item.spider-man-mod.raw_silicon": "Raw Silicon",
   "item.spider-man-mod.silicon_ingot": "Silicon Ingot",
+  "item.spider-man-mod.raw_aluminium": "Raw Aluminium",
+  "item.spider-man-mod.aluminium_ingot": "Aluminium Ingot",
 
-  "block.spider-man-mod.silicon_ore": "Silicon Ore"
+
+  "block.spider-man-mod.silicon_ore": "Silicon Ore",
+  "block.spider-man-mod.deepslate_silicon_ore": "Deepslate Silicon Ore",
+  "block.spider-man-mod.aluminium_ore": "Aluminium Ore",
+  "block.spider-man-mod.deepslate_aluminium_ore": "Deepslate Aluminium Ore"
 }

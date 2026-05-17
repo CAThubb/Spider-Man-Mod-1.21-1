@@ -17,5 +17,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     public void generate() {
         addDrop(ModBlocks.SILICON_ORE, oreDrops(ModBlocks.SILICON_ORE, ModItems.RAW_SILICON_ORE));
         addDrop(ModBlocks.DEEPSLATE_SILICON_ORE, oreDrops(ModBlocks.DEEPSLATE_SILICON_ORE, ModItems.RAW_SILICON_ORE));
+        addDrop(ModBlocks.ALUMINIUM_ORE, oreDrops(ModBlocks.ALUMINIUM_ORE, ModItems.RAW_ALUMINIUM_ORE));
+        addDrop(ModBlocks.DEEPSLATE_ALUMINIUM_ORE, oreDrops(ModBlocks.DEEPSLATE_ALUMINIUM_ORE, ModItems.RAW_ALUMINIUM_ORE));
     }
 }
